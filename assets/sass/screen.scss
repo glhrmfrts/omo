@@ -50,6 +50,7 @@ h2 {
 	.tile {
 		background-color: $dark-color;
 		-webkit-animation: grow 1s linear;
+		float:left;
 		&.light-up {
 			background-color: $light-color !important;
 		}
