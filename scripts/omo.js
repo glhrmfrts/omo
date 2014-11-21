@@ -146,7 +146,7 @@ Omo.prototype.handleClick = function(tileElement) {
 	var tile = this.tiles[i];
 
 	if (!tile.clicked) {
-		if (this.playAudio < 16 && this.audioIncreasing) {
+		if (this.playAudio < this.audios.length && this.audioIncreasing) {
 			var audio = this.audios[this.playAudio];
 			audio.play();
 			this.playAudio++;
