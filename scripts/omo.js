@@ -82,6 +82,10 @@ Omo.prototype.init = function() {
 		this.objective = 40;
 		this.difficult = 6;
 		this.maxTries = 8;
+	} else if (this.size == 5) {
+		this.objective = 50;
+		this.difficult = 8;
+		this.maxTries = 7;
 	} else if (this.size == 6) {
 		this.objective = 50;
 		this.difficult = 10;
