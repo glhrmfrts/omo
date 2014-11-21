@@ -227,6 +227,8 @@ Omo.prototype.afterEnd = function() {
 		tile.remove();
 	}
 
+	this.score = (this.score - this.wrongTiles.length);
+
 	if (this.tries >= this.maxTries || this.score >= this.objective) {
 
 		var greeting = document.createElement('div');
@@ -251,8 +253,6 @@ Omo.prototype.afterEnd = function() {
 		$('#game').append(greeting);
 	} else {
 		this.over = false;
-
-		this.score = (this.score - this.wrongTiles.length);
 		game.init();
 	}
 }
