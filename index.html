@@ -1,0 +1,50 @@
+<!doctype HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Omo</title>
+	<link rel="stylesheet" href="assets/stylesheets/screen.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="hidden" name="game-score" id="game-score">
+<div class="container">
+	<div id="omo">
+		<div class="row">
+			<div class="col-sm-4 menu menu-tries">
+			</div>
+			<div class="col-sm-4 menu">
+				<h1 class="title">Omo</h1>
+			</div>
+			<div class="col-sm-4 menu menu-score">
+			</div>
+		</div>
+		<div class="row u-m menu" style="text-align:center;">
+			<p><button class="btn new-game-btn" id="size-3">Fácil</button></p>
+			<p>Tamanho do grid 3, 4 blocos corretos e objetivo de 30 pontos com 10 jogadas</p>
+			<hr>
+			<p><button class="btn new-game-btn" id="size-4">Médio</button></p>
+			<p>Tamanho do grid 4, 6 blocos corretos e objetivo de 40 pontos com 8 jogadas</p>
+			<hr> 
+			<p><button class="btn new-game-btn" id="size-6">Difícil</button></p>
+			<p>Tamanho do grid 6, 10 blocos corretos e objetivo de 50 pontos com 6 jogadas</p>
+			<hr> 
+		</div>
+		<div id="game" class="row">
+		</div>
+		<div class="row" id="credits">
+			<p><strong class="important">Como jogar: </strong>
+				Passe o mouse sobre os blocos que se acenderam no começo do jogo, 
+				seus pontos serão calculados pelo (número de blocos acesos - o número de blocos que você errar).
+			</p>
+			<p><strong class="important">Criado por <a href="https://facebook.com/glhrmfrts">Guilherme Nemeth</a>, </strong>
+				baseado na versão mobile criada por <a href="https://www.youtube.com/channel/UC_IV37n-uBpRp64hQIwywWQ">ForeignGuyMike</a>
+				que pode ser baixada <a href="https://play.google.com/store/apps/details?id=com.distraction.omo.android&hl=pt_BR">aqui</a>
+			</p>
+		</div>
+	</div>
+</div>
+<script src="scripts/omo.js"></script>
+</body>
+</html>

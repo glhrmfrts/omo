@@ -1,0 +1,146 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$size: 4;
+$width: 600px;
+$padding: 10px;
+$dark-color: rgba(122,61,0,1);
+$light-color: rgba(192,141,0,1);
+$incorrect-color: rgba(222, 21, 21, 1);
+
+body {
+	background-color:#222 !important;
+	font-family: "Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace !important;
+}
+
+.container {
+	width: $width !important;
+}
+
+.menu {
+	text-align:center;
+	h1.title {
+		color:#fff;
+		font-size: 60px;
+	}
+	p {
+		color:#fff;
+	}
+	.new-game-btn {
+		background-color: $dark-color;
+		color:#fff;
+		font-size: 20px;
+		&:hover {
+			background-color: $light-color;
+			color:#fff;
+		}
+	}
+}
+
+h2 {
+	color:#fff !important;
+}
+
+#game {
+	
+	.tile {
+		background-color: $dark-color;
+		-webkit-animation: grow 1s linear;
+		&.light-up {
+			background-color: $light-color !important;
+		}
+		&.init-light-up {
+			background-color: $dark-color;
+			-webkit-animation: init-light 5s linear;
+		}
+		&.light-incorrect {
+			background-color: $incorrect-color !important;
+		}
+	}
+	&.out {
+		-webkit-animation: out 7s linear;
+	}
+	.greeting {
+		text-align:center;
+		color:#fff;	
+		.play-again-btn {
+			background-color: $dark-color;
+			color:#fff;
+			font-size: 20px;
+			&:hover {
+				background-color: $light-color;
+				color:#fff;
+			}
+		}
+	}
+}
+
+#credits {
+	color:#fff;
+	margin-top: 10px;
+	.important {
+		font-size: 18px;
+	}
+}
+
+@-webkit-keyframes grow {
+
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
+}
+
+@-webkit-keyframes init-light {
+
+	0% {
+		background-color: $light-color;
+	}
+	50% {
+		background-color: $light-color;
+	}
+	55% {
+		background-color: $dark-color;
+	}
+	60% {
+		background-color: $light-color;
+	}
+	65% {
+		background-color: $dark-color;
+	}
+	70% {
+		background-color: $light-color;
+	}
+	75% {
+		background-color: $dark-color;
+	}
+	80% {
+		background-color: $light-color;
+	}
+	100% {
+		background-color: $dark-color;
+	}
+}
+
+@-webkit-keyframes out {
+	0% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
