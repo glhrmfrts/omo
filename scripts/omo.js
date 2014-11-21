@@ -123,7 +123,6 @@ Omo.prototype.lightRandomTiles = function() {
 	while (self.correctTiles.length < this.difficult) {
 
 		var r = Math.floor(Math.random() * self.tiles.length);
-		console.log(r);
 		var tile = self.tiles[r];
 
 		if (!tile.correct) {
