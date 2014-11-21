@@ -49,7 +49,7 @@ function Omo() {
 	this.playAudio = 0;
 }
 
-Omo.prototype.loadAssets = function() {
+Omo.prototype.loadAudios = function() {
 
 	var self = this;
 
@@ -59,8 +59,6 @@ Omo.prototype.loadAssets = function() {
 			self.audios.push(audio);
 		}
 	}
-
-	console.log(this.audios);
 }
 
 Omo.prototype.setSize = function(size) {
@@ -261,7 +259,7 @@ Omo.prototype.afterEnd = function() {
 }
 
 game = new Omo();
-game.loadAssets();
+game.loadAudios();
 
 $(function() {
 	$('.new-game-btn').on('click', function() {
