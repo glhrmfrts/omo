@@ -56,7 +56,36 @@ h2 {
 		}
 		&.init-light-up {
 			background-color: $dark-color;
-			-webkit-animation: init-light 5s linear;
+			&.ilu1 {
+				-webkit-animation: init-light 2s linear;
+			}
+			&.ilu2 {
+				-webkit-animation: init-light 2s linear;
+			}
+			&.ilu3 {
+				-webkit-animation: init-light 2s linear;
+			}
+			&.ilu4 {
+				-webkit-animation: init-light 3s linear;
+			}
+			&.ilu5 {
+				-webkit-animation: init-light 4s linear;
+			}
+			&.ilu6 {
+				-webkit-animation: init-light 5s linear;
+			}
+			&.ilu7 {
+				-webkit-animation: init-light 6s linear;
+			}
+			&.ilu8 {
+				-webkit-animation: init-light 7s linear;
+			}
+			&.ilu9 {
+				-webkit-animation: init-light 7s linear;
+			}
+			&.ilu10 {
+				-webkit-animation: init-light 7s linear;
+			}
 		}
 		&.light-incorrect {
 			background-color: $incorrect-color !important;

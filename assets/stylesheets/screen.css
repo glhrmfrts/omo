@@ -121,39 +121,78 @@ h2 {
 /* line 57, ../sass/screen.scss */
 #game .tile.init-light-up {
   background-color: #7a3d00;
+}
+/* line 59, ../sass/screen.scss */
+#game .tile.init-light-up.ilu1 {
+  -webkit-animation: init-light 2s linear;
+}
+/* line 62, ../sass/screen.scss */
+#game .tile.init-light-up.ilu2 {
+  -webkit-animation: init-light 2s linear;
+}
+/* line 65, ../sass/screen.scss */
+#game .tile.init-light-up.ilu3 {
+  -webkit-animation: init-light 2s linear;
+}
+/* line 68, ../sass/screen.scss */
+#game .tile.init-light-up.ilu4 {
+  -webkit-animation: init-light 3s linear;
+}
+/* line 71, ../sass/screen.scss */
+#game .tile.init-light-up.ilu5 {
+  -webkit-animation: init-light 4s linear;
+}
+/* line 74, ../sass/screen.scss */
+#game .tile.init-light-up.ilu6 {
   -webkit-animation: init-light 5s linear;
 }
-/* line 61, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
+#game .tile.init-light-up.ilu7 {
+  -webkit-animation: init-light 6s linear;
+}
+/* line 80, ../sass/screen.scss */
+#game .tile.init-light-up.ilu8 {
+  -webkit-animation: init-light 7s linear;
+}
+/* line 83, ../sass/screen.scss */
+#game .tile.init-light-up.ilu9 {
+  -webkit-animation: init-light 7s linear;
+}
+/* line 86, ../sass/screen.scss */
+#game .tile.init-light-up.ilu10 {
+  -webkit-animation: init-light 7s linear;
+}
+/* line 90, ../sass/screen.scss */
 #game .tile.light-incorrect {
   background-color: #de1515 !important;
 }
-/* line 65, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 #game.out {
   -webkit-animation: out 7s linear;
 }
-/* line 68, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 #game .greeting {
   text-align: center;
   color: #fff;
 }
-/* line 71, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 #game .greeting .play-again-btn {
   background-color: #7a3d00;
   color: #fff;
   font-size: 20px;
 }
-/* line 75, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #game .greeting .play-again-btn:hover {
   background-color: #c08d00;
   color: #fff;
 }
 
-/* line 83, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 #credits {
   color: #fff;
   margin-top: 10px;
 }
-/* line 86, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 #credits .important {
   font-size: 18px;
 }
