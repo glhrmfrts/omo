@@ -18,9 +18,9 @@ Tile.prototype.light = function() {
 	this.element.className = c + ' light-up';
 }
 
-Tile.prototype.initLight = function() {
+Tile.prototype.initLight = function(duration) {
 	var c = this.element.className;
-	this.element.className = c + ' init-light-up cheater';
+	this.element.className = c + ' init-light-up ilu'+duration+' cheater';
 	this.correct = true;
 }
 
@@ -43,10 +43,13 @@ function Omo() {
 	this.difficult = 6;
 	this.over;
 	this.tries = 0;
+	this.triesLeft;
 	this.maxTries;
 	this.objective;
 	this.audios = [];
 	this.playAudio = 0;
+	this.available;
+	this.memorization;
 }
 
 Omo.prototype.loadAudios = function() {
@@ -67,7 +70,7 @@ Omo.prototype.setSize = function(size) {
 
 Omo.prototype.init = function() {
 
-	this.tries += 1;
+	this.available = false;
 	this.tiles = [];
 	this.correctTiles = [];
 	this.wrongTiles = [];
@@ -91,6 +94,11 @@ Omo.prototype.init = function() {
 		this.difficult = 10;
 		this.maxTries = 6;
 	}
+
+	if (this.tries == 0)
+		this.triesLeft = this.maxTries;
+	else
+		this.triesLeft = this.maxTries - this.tries;
 
 	$('.u-m').hide();
 	$('.menu-score').html('<h2>Pontos<br><span id="score"></span></h2>');
@@ -130,25 +138,30 @@ Omo.prototype.lightRandomTiles = function() {
 		var tile = self.tiles[r];
 
 		if (!tile.correct) {
-			tile.initLight();
+			tile.initLight(this.triesLeft);
 			self.correctTiles.push(tile);
 		}
 	}
 
+	window.setTimeout('game.makeAvailable()', ((this.triesLeft) * 1000) - 1000);
+
 	this.setScore(this.score + this.correctTiles.length);
+}
+
+Omo.prototype.makeAvailable = function() {
+	this.available = true;
 }
 
 Omo.prototype.handleClick = function(tileElement) {
 
-	if (this.over) {
-		return false;
-	}
+	if (this.over || !this.available) return false;
 
 	var a = tileElement.id.split('-');
 	var i = this.coordinatesToIndex(parseInt(a[1]), parseInt(a[2]));
 	var tile = this.tiles[i];
 
 	if (!tile.clicked) {
+
 		if (this.playAudio < this.audios.length && this.audioIncreasing) {
 			var audio = this.audios[this.playAudio];
 			audio.play();
@@ -196,7 +209,7 @@ Omo.prototype.setScore = function(score) {
 	this.score = score;
 	$('#game-score').val(parseInt(this.score));
 	document.getElementById('score').innerHTML = ''+ parseInt(this.score);
-	document.getElementById('tries').innerHTML = ''+ parseInt(this.maxTries - this.tries);
+	document.getElementById('tries').innerHTML = ''+ this.triesLeft;
 }
 
 Omo.prototype.endGame = function() {
@@ -233,7 +246,16 @@ Omo.prototype.afterEnd = function() {
 
 	this.score = (this.score - this.wrongTiles.length);
 
-	if (this.tries >= this.maxTries || this.score >= this.objective) {
+	if (this.score < 0) {
+		this.score = -this.difficult;
+	}
+
+	this.tries += 1;
+	this.triesLeft = this.maxTries - this.tries;
+
+	if (this.triesLeft == 0 || this.score >= this.objective) {
+
+		this.setScore(this.score);
 
 		var greeting = document.createElement('div');
 		greeting.className = 'greeting';
@@ -267,7 +289,7 @@ game.loadAudios();
 $(function() {
 	$('.new-game-btn').on('click', function() {
 		var boardSize = $(this).attr('id').split('-');
-		game.setSize(parseInt(boardSize[1]));		
+		game.setSize(parseInt(boardSize[1]));	
 		game.init();
 	});
 });
