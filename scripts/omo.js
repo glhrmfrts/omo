@@ -272,7 +272,7 @@ Omo.prototype.afterEnd = function() {
 		greeting.innerHTML += '</ul>';
 
 		greeting.innerHTML += '<br>';
-		greeting.innerHTML += '<a href="/" class="btn play-again-btn">Jogar de novo</a>';
+		greeting.innerHTML += '<a href="" class="btn play-again-btn">Jogar de novo</a>';
 		greeting.innerHTML += '<br>';
 		greeting.innerHTML += '<br>';
 
